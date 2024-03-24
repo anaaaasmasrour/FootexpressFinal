@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 class="heading">Teams Information</h1>
+  <h1 class="heading">Please select a country to fetch the team Information</h1>
+  <div class="select-container">
+    <select class="select" [(ngModel)]="selectedCountryCode" (change)="onCountrySelect(selectedCountryCode)">
+      <option class="option" *ngFor="let country of countries" [value]="country.name">{{ country.name }}</option>
+    </select>
+  </div>
+
+  <div class="team-container">
+    <div class="team-card" *ngFor="let team of teams">
+      <img class="team-logo" [src]="team.team.logo" alt="{{ team.team.name }}">
+      <div class="team-details">
+        <h2 class="team-name">{{ team.team.name }}</h2>
+        <p class="team-info">Country: {{ team.team.country }}</p>
+        <p class="team-info">Founded: {{ team.team.founded }}</p>
+        <p class="team-info">Venue: {{ team.venue.name }}</p>
+        <p class="team-info">City: {{ team.venue.city }}</p>
+        <p class="team-info">Capacity: {{ team.venue.capacity }}</p>
+      </div>
+    </div>
+  </div>
+</div>

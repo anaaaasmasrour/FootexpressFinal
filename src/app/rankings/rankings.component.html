@@ -1,0 +1,128 @@
+<!-- <div class="standings-container">
+  <h2>Ranking/Standings</h2>
+  <div *ngIf="standings">
+    <div *ngFor="let standingsGroup of standings" class="standings-group">
+      <h3>{{ standingsGroup.league.name }} - {{ standingsGroup.league.country }}</h3>
+      <div *ngFor="let group of standingsGroup.league.standings" class="standings-table-wrapper">
+        <h4>{{ group.type }}</h4>
+        <table class="standings-table">
+          <thead>
+            <tr>
+              <th>Position</th>
+              <th>Team</th>
+              <th>Points</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let team of group">
+              <td>{{ team.rank }}</td>
+              <td>
+                <img src="{{ team.team.logo }}" alt="{{ team.team.name }}" width="20" height="20">
+                {{ team.team.name }}
+              </td>
+              <td>{{ team.points }}</td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!--
+<div class="standings-container">
+  <h2>Ranking/Standings</h2>
+  <select [(ngModel)]="selectedLeague" (change)="onLeagueChange($event)">
+    <option *ngFor="let league of leagues" [value]="league.league.id">{{ league.league.name }}</option>
+  </select>
+  <select [(ngModel)]="selectedSeason" (change)="onSeasonChange($event)">
+    <option *ngFor="let season of seasons" [value]="season">{{ season }}</option>
+  </select>
+  <div *ngIf="standings">
+    <div *ngFor="let standingsGroup of standings" class="standings-group">
+      <h3>{{ standingsGroup.league.name }} - {{ standingsGroup.league.country }}</h3>
+      <div *ngFor="let group of standingsGroup.league.standings" class="standings-table-wrapper">
+        <h4>{{ group.type }}</h4>
+        <table class="table custom-table">
+          <thead>
+            <tr>
+              <th>P</th>
+              <th>Team</th>
+              <th>W</th>
+              <th>D</th>
+              <th>L</th>
+              <th>PTS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let team of group">
+              <td>{{ team.rank }}</td>
+              <td class="text-white">
+                <img src="{{ team.team.logo }}" alt="{{ team.team.name }}" width="20" height="20">
+                {{ team.team.name }}
+              </td>
+              <td class="text-white">{{ team.all.win }}</td>
+              <td>{{ team.all.draw }}</td>
+              <td>{{ team.all.lose }}</td>
+              <td>{{ team.points }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div id="wg-api-football-standings"
+    data-host="v3.football.api-sports.io"
+    data-key="e1c5db33da82c5fa1afe29e56cb54784"
+    data-league="39"
+    data-team=""
+    data-season="2019"
+    data-theme=""
+    data-show-errors="false"
+    data-show-logos="true"
+    class="wg_loader">
+</div>
+
+
+
+
+<!-- <div class="standings-container">
+  <h2>Ranking/Standings</h2>
+  <div *ngIf="standings">
+    <div *ngFor="let standingsGroup of standings" class="standings-group">
+      <h3>{{ standingsGroup.league.name }} - {{ standingsGroup.league.country }}</h3>
+      <div *ngFor="let group of standingsGroup.league.standings" class="standings-table-wrapper">
+        <h4>{{ group.type }}</h4>
+        <table class="table custom-table">
+          <thead>
+            <tr>
+              <th>P</th>
+              <th>Team</th>
+              <th>W</th>
+              <th>D</th>
+              <th>L</th>
+              <th>PTS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let team of group">
+              <td>{{ team.rank }}</td>
+              <td class="text-white">
+                <img src="{{ team.team.logo }}" alt="{{ team.team.name }}" width="20" height="20">
+                {{ team.team.name }}
+              </td>
+              <td class="text-white">{{ team.all.win }}</td>
+              <td>{{ team.all.draw }}</td>
+              <td>{{ team.all.lose }}</td>
+              <td>{{ team.points }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div> -->

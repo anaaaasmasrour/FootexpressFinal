@@ -1,0 +1,553 @@
+<style>
+  .titre {
+    font-size: 100px;
+  text-shadow: -1px -1px #e40505, 1px 1px #e40505, -3px 0 4px #000;
+  font-family:Arial, Helvetica, sans-serif;
+  color: #ee1e46;
+  padding:16px;
+  font-weight:lighter;
+  
+  text-align:center;
+  display:block;
+  margin:16px;
+  }
+
+  .description {
+      /*color: #d3d3d3;
+      font-size: 1.25rem;
+      .table-scroll {
+    height: 400px; /* Hauteur de la zone de défilement */
+    overflow-y: auto; /* Activer le défilement vertical si nécessaire */
+    color: #f8f8f8; font-family: 'Raleway',sans-serif; font-size: 18px; font-weight: 500; line-height: 32px; margin: 0 0 24px;
+}
+
+.table-wrapper {
+    overflow-x: auto; /* Activer le défilement horizontal si nécessaire */
+} 
+  
+</style>
+
+<div class="site-wrap bg-dark">
+
+ <app-nav-bar></app-nav-bar>
+
+  <div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+
+     <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8 ml-auto">
+
+        
+          <h1 class="titre">FootExpress</h1>
+<p class="description">Bienvenue sur notre plateforme dédiée aux passionnés de football !
+   Plongez au cœur de l'action avec notre page d'accueil dynamique, 
+   conçue pour vous tenir informé des dernières nouvelles 
+  et des événements les plus palpitants du monde du football.</p>
+      </div>
+    </div>
+
+    <!-- <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 ml-auto">
+          <h1 class="text-white">World Cup Event</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, molestias repudiandae pariatur.</p>
+          <div id="date-countdown"></div>
+          <p>
+            <a href="#" class="btn btn-primary py-3 px-4 mr-3">Book Ticket</a>
+            <a href="#" class="more light">Learn More</a>
+          </p>
+        </div>
+      </div>
+    </div> -->
+  </div>
+
+  <div class="container">
+
+
+    <div class="row">
+      <div class="col-lg-12">
+
+        <div class="d-flex team-vs">
+          <span class="score">{{ matchDetails?.goals.home }} - {{ matchDetails?.goals.away }}</span>
+          <div class="team-1 w-50">
+            <div class="team-details w-100 text-center">
+              <img [src]="matchDetails?.teams.home.logo" alt="Image" class="img-fluid">
+              <h3>{{ matchDetails?.teams.home.name }}
+                <span>({{ matchDetails?.teams.home.winner ? 'win' : matchDetails?.teams.away.winner ? 'loss' : 'draw' }})</span>
+              </h3>
+              <!-- <ul class="list-unstyled">
+                <li *ngFor="let event of matchDetails?.events">{{ event.homePlayerName }} ({{ event.homePlayerNumber }})</li>
+              </ul> -->
+            </div>
+          </div>
+          <div class="team-2 w-50">
+            <div class="team-details w-100 text-center">
+              <img [src]="matchDetails?.teams.away.logo" alt="Image" class="img-fluid">
+              <h3>{{ matchDetails?.teams.away.name }}
+                <span>({{ matchDetails?.teams.away.winner ? 'win' : matchDetails?.teams.home.winner ? 'loss' : 'draw' }})</span>
+              </h3>
+              <!-- <ul class="list-unstyled">
+                <li *ngFor="let event of matchDetails?.events">{{ event.awayPlayerName }} ({{ event.awayPlayerNumber }})</li>
+              </ul> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  
+
+  <div class="container">
+
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="col-12 title-section">
+            <div class="col-12 title-section">
+              <h2 class="heading">Details du match :  </h2>
+            </div> 
+          </div>
+            <div class="widget-body mb-3">
+              <div class="widget-vs">
+                <div class="d-flex align-items-center justify-content-around justify-content-between w-100">
+                  <div class="team-1 text-center">
+                    <img [src]="matchDetails?.teams.home.logo" alt="Home Team Logo">
+                    <h3>{{ matchDetails?.teams.home.name }}</h3>
+                  </div>
+                  <div>
+                    <span class="vs"><span>VS</span></span>
+                  </div>
+                  <div class="team-2 text-center">
+                    <img [src]="matchDetails?.teams.away.logo" alt="Away Team Logo">
+                    <h3>{{ matchDetails?.teams.away.name }}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center widget-vs-contents mb-4">
+              <h4>{{ matchDetails?.league.name }}</h4>
+              <p class="mb-5">
+                <span class="d-block">{{ matchDetails?.fixture.date | date: 'MMMM d, yyyy' }}</span>
+                <span class="d-block">{{ matchDetails?.fixture.date | date: 'h:mm a' }} GMT{{ matchDetails?.fixture.timezone.slice(0,3) }}</span>
+                <strong class="text-primary">{{ matchDetails?.fixture.venue.name }}</strong>
+              </p>
+            </div>
+        </div>
+        </div>
+        </div>
+
+  
+
+  <div class="site-section bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6" style="
+        overflow: overlay;
+        height: 109.8vh;
+    ">
+          <!-- <div class="widget-next-match">
+            <div class="widget-title">
+              <h3>Next Match</h3>
+            </div>
+            <div class="widget-body mb-3">
+              <div class="widget-vs">
+                <div class="d-flex align-items-center justify-content-around justify-content-between w-100">
+                  <div class="team-1 text-center">
+                    <img src="assets/images/logo_1.png" alt="Image">
+                    <h3>Football League</h3>
+                  </div>
+                  <div>
+                    <span class="vs"><span>VS</span></span>
+                  </div>
+                  <div class="team-2 text-center">
+                    <img src="assets/images/logo_2.png" alt="Image">
+                    <h3>Soccer</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center widget-vs-contents mb-4">
+              <h4>World Cup League</h4>
+              <p class="mb-5">
+                <span class="d-block">December 20th, 2020</span>
+                <span class="d-block">9:30 AM GMT+0</span>
+                <strong class="text-primary">New Euro Arena</strong>
+              </p>
+
+              <div id="date-countdown2" class="pb-1"></div>
+            </div>
+          </div> -->
+
+          <div class="widget-next-match">
+            <!-- <div class="widget-title">
+              <h3>Match Details</h3>
+            </div>
+            <div class="widget-body mb-3">
+              <div class="widget-vs">
+                <div class="d-flex align-items-center justify-content-around justify-content-between w-100">
+                  <div class="team-1 text-center">
+                    <img [src]="matchDetails?.teams.home.logo" alt="Home Team Logo">
+                    <h3>{{ matchDetails?.teams.home.name }}</h3>
+                  </div>
+                  <div>
+                    <span class="vs"><span>VS</span></span>
+                  </div>
+                  <div class="team-2 text-center">
+                    <img [src]="matchDetails?.teams.away.logo" alt="Away Team Logo">
+                    <h3>{{ matchDetails?.teams.away.name }}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center widget-vs-contents mb-4">
+              <h4>{{ matchDetails?.league.name }}</h4>
+              <p class="mb-5">
+                <span class="d-block">{{ matchDetails?.fixture.date | date: 'MMMM d, yyyy' }}</span>
+                <span class="d-block">{{ matchDetails?.fixture.date | date: 'h:mm a' }} GMT{{ matchDetails?.fixture.timezone.slice(0,3) }}</span>
+                <strong class="text-primary">{{ matchDetails?.fixture.venue.name }}</strong>
+              </p>
+            </div> -->
+            <div class="col-12 title-section">
+              <h2 class="heading">Listes des Matchs :  </h2>
+            </div> 
+            <div id="wg-api-football-games" data-host="v3.football.api-sports.io"
+              data-key="e1c5db33da82c5fa1afe29e56cb54784" data-date="" data-league="" data-season="" data-theme="dark"
+              data-refresh="15" data-show-toolbar="true" data-show-errors="false" data-show-logos="true"
+              data-modal-game="true" data-modal-standings="true" data-modal-show-logos="true">
+            </div>
+            <script type="module" src="https://widgets.api-sports.io/2.0.3/widgets.js">
+            </script>
+
+          </div>
+        </div>
+
+        
+        <div class="col-lg-6" style="
+        overflow: overlay;
+        height: 109.8vh;
+    ">
+        <div class="col-lg-12">
+          <div class="col-12 title-section">
+            <h2 class="heading">Classement des équipes :  </h2>
+          </div> 
+          <div class="widget-next-match">
+            <select class="wg_toolbar" [(ngModel)]="selectedLeague" (change)="onLeagueChange($event)">
+              <option *ngFor="let league of leagues" [value]="league.league.id">{{ league.league.name }}</option>
+            </select>
+            <select class="wg_toolbar" [(ngModel)]="selectedSeason" (change)="onSeasonChange($event)">
+              <option *ngFor="let season of seasons" [value]="season">{{ season }}</option>
+            </select>
+
+            <div *ngIf="standings">
+              <div *ngFor="let standingsGroup of standings" class="standings-group">
+                <h3>{{ standingsGroup.league.name }} - {{ standingsGroup.league.country }}</h3>
+                <div *ngFor="let group of standingsGroup.league.standings" class="standings-table-wrapper">
+                  <h4>{{ group.type }}</h4>
+                  <table class="table custom-table">
+                    <thead>
+                      <tr>
+                        <th>P</th>
+                        <th>Team</th>
+                        <th>W</th>
+                        <th>D</th>
+                        <th>L</th>
+                        <th>PTS</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let team of group">
+                        <td>{{ team.rank }}</td>
+                        <td>
+                          <img src="{{ team.team.logo }}" alt="{{ team.team.name }}" width="20" height="20">
+                          {{ team.team.name }}
+                        </td>
+                        <td>{{ team.all.win }}</td>
+                        <td>{{ team.all.draw }}</td>
+                        <td>{{ team.all.lose }}</td>
+                        <td>{{ team.points }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div  *ngIf="!standings">
+              <div  class="standings-group">
+                <h3 >Premier League - England</h3>
+                <div  class="standings-table-wrapper">
+                  <h4 ></h4>
+                  <table  class="table custom-table">
+                    <thead >
+                      <tr >
+                        <th >P</th>
+                        <th >Team</th>
+                        <th >W</th>
+                        <th >D</th>
+                        <th >L</th>
+                        <th >PTS</th>
+                      </tr>
+                    </thead>
+                    <tbody >
+                      <tr >
+                        <td >1</td>
+                        <td ><img  width="20" height="20"
+                            src="https://media.api-sports.io/football/teams/40.png" alt="Liverpool"> Liverpool </td>
+                        <td >32</td>
+                        <td >3</td>
+                        <td >3</td>
+                        <td >99</td>
+                      </tr>
+                      <tr >
+                        <td >2</td>
+                        <td ><img  width="20" height="20"
+                            src="https://media.api-sports.io/football/teams/50.png" alt="Manchester City"> Manchester
+                          City </td>
+                        <td >26</td>
+                        <td >3</td>
+                        <td >9</td>
+                        <td >81</td>
+                      </tr>
+                      <tr >
+                        <td >3</td>
+                        <td ><img  width="20" height="20"
+                            src="https://media.api-sports.io/football/teams/33.png" alt="Manchester United"> Manchester
+                          United </td>
+                        <td >18</td>
+                        <td >12</td>
+                        <td >8</td>
+                        <td >66</td>
+                      </tr>
+                      <tr >
+                        <td >4</td>
+                        <td ><img  width="20" height="20"
+                            src="https://media.api-sports.io/football/teams/49.png" alt="Chelsea"> Chelsea </td>
+                        <td >20</td>
+                        <td >6</td>
+                        <td >12</td>
+                        <td >66</td>
+                      </tr>
+                      <tr >
+                        <td >5</td>
+                        <td ><img  width="20" height="20"
+                            src="https://media.api-sports.io/football/teams/46.png" alt="Leicester"> Leicester </td>
+                        <td >18</td>
+                        <td >8</td>
+                        <td >12</td>
+                        <td >62</td>
+                      </tr>
+                      <tr >
+                        <td >6</td>
+                        <td ><img  width="20" height="20"
+                            src="https://media.api-sports.io/football/teams/47.png" alt="Tottenham"> Tottenham </td>
+                        <td >16</td>
+                        <td >11</td>
+                        <td >11</td>
+                        <td >59</td>
+                      </tr>
+                      <tr >
+                        <td >7</td>
+                        <td ><img  width="20" height="20"
+                            src="https://media.api-sports.io/football/teams/39.png" alt="Wolves"> Wolves </td>
+                        <td >15</td>
+                        <td >14</td>
+                        <td >9</td>
+                        <td >59</td>
+                      </tr>
+                      <tr >
+                        <td >8</td>
+                        <td ><img  width="20" height="20"
+                            src="https://media.api-sports.io/football/teams/42.png" alt="Arsenal"> Arsenal </td>
+                        <td >14</td>
+                        <td >14</td>
+                        <td >10</td>
+                        <td >56</td>
+                      </tr>
+                      <tr >
+                        <td >9</td>
+                        <td ><img  width="20" height="20"
+                            src="https://media.api-sports.io/football/teams/62.png" alt="Sheffield Utd"> Sheffield Utd
+                        </td>
+                        <td >14</td>
+                        <td >12</td>
+                        <td >12</td>
+                        <td >54</td>
+                      </tr>
+                      <tr >
+                        <td >10</td>
+                        <td ><img  width="20" height="20"
+                            src="https://media.api-sports.io/football/teams/44.png" alt="Burnley"> Burnley </td>
+                        <td >15</td>
+                        <td >9</td>
+                        <td >14</td>
+                        <td >54</td>
+                      </tr>
+                      <tr >
+                        <td >11</td>
+                        <td ><img  width="20" height="20"
+                            src="https://media.api-sports.io/football/teams/41.png" alt="Southampton"> Southampton </td>
+                        <td >15</td>
+                        <td >7</td>
+                        <td >16</td>
+                        <td >52</td>
+                      </tr>
+                      <tr >
+                        <td >12</td>
+                        <td ><img  width="20" height="20"
+                            src="https://media.api-sports.io/football/teams/45.png" alt="Everton"> Everton </td>
+                        <td >13</td>
+                        <td >10</td>
+                        <td >15</td>
+                        <td >49</td>
+                      </tr>
+                      <tr >
+                        <td >13</td>
+                        <td ><img  width="20" height="20"
+                            src="https://media.api-sports.io/football/teams/34.png" alt="Newcastle"> Newcastle </td>
+                        <td >11</td>
+                        <td >11</td>
+                        <td >16</td>
+                        <td >44</td>
+                      </tr>
+                      <tr >
+                        <td >14</td>
+                        <td ><img  width="20" height="20"
+                            src="https://media.api-sports.io/football/teams/52.png" alt="Crystal Palace"> Crystal Palace
+                        </td>
+                        <td >11</td>
+                        <td >10</td>
+                        <td >17</td>
+                        <td >43</td>
+                      </tr>
+                      <tr >
+                        <td >15</td>
+                        <td ><img  width="20" height="20"
+                            src="https://media.api-sports.io/football/teams/51.png" alt="Brighton"> Brighton </td>
+                        <td >9</td>
+                        <td >14</td>
+                        <td >15</td>
+                        <td >41</td>
+                      </tr>
+                      <tr >
+                        <td >16</td>
+                        <td ><img  width="20" height="20"
+                            src="https://media.api-sports.io/football/teams/48.png" alt="West Ham"> West Ham </td>
+                        <td >10</td>
+                        <td >9</td>
+                        <td >19</td>
+                        <td >39</td>
+                      </tr>
+                      <tr >
+                        <td >17</td>
+                        <td ><img  width="20" height="20"
+                            src="https://media.api-sports.io/football/teams/66.png" alt="Aston Villa"> Aston Villa </td>
+                        <td >9</td>
+                        <td >8</td>
+                        <td >21</td>
+                        <td >35</td>
+                      </tr>
+                      <tr >
+                        <td >18</td>
+                        <td ><img  width="20" height="20"
+                            src="https://media.api-sports.io/football/teams/35.png" alt="Bournemouth"> Bournemouth </td>
+                        <td >9</td>
+                        <td >7</td>
+                        <td >22</td>
+                        <td >34</td>
+                      </tr>
+                      <tr >
+                        <td >19</td>
+                        <td ><img  width="20" height="20"
+                            src="https://media.api-sports.io/football/teams/38.png" alt="Watford"> Watford </td>
+                        <td >8</td>
+                        <td >10</td>
+                        <td >20</td>
+                        <td >34</td>
+                      </tr>
+                      <tr >
+                        <td >20</td>
+                        <td ><img  width="20" height="20"
+                            src="https://media.api-sports.io/football/teams/71.png" alt="Norwich"> Norwich </td>
+                        <td >5</td>
+                        <td >6</td>
+                        <td >27</td>
+                        <td >21</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div id="wg-api-football-standings"
+                data-host="v3.football.api-sports.io"
+                data-key="e1c5db33da82c5fa1afe29e56cb54784"
+                [attr.data-league]="selectedLeague"
+                data-team=""
+                [attr.data-season]="selectedSeason"
+                data-theme=""
+                data-show-errors="false"
+                data-show-logos="true"
+                class="wg_loader">
+          </div> -->
+          </div>
+
+        </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- .site-section -->
+
+
+
+  <!-- <footer class="footer-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="widget mb-3">
+            <h3>Links</h3>
+            <ul class="list-unstyled links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Matches</a></li>
+              <li><a href="#">Players</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer> -->
+
+  <app-footer></app-footer>
+
+
+
+</div>
+
+
+
+
+<!-- <div>TEAMS INFORMATION</div>
+
+<app-team-info></app-team-info> -->
+
+
+<!-- <div>RANKINGS</div>
+<app-rankings></app-rankings>
+
+
+<div>Match Details</div>
+<app-match-details></app-match-details> -->
+
+
+<!-- <div>Player Stats</div>
+<app-player-statistics></app-player-statistics> -->
+
+<!-- <div>Match Calendar</div> -->
+
+ 

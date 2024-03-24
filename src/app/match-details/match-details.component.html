@@ -1,0 +1,86 @@
+<style>
+  .titre {
+    font-size: 100px;
+  text-shadow: -1px -1px #e40505, 1px 1px #e40505, -3px 0 4px #000;
+  font-family:Arial, Helvetica, sans-serif;
+  color: #ee1e46;
+  padding:16px;
+  font-weight:lighter;
+  
+  text-align:center;
+  display:block;
+  margin:16px;
+  }
+
+  .description {
+      /*color: #d3d3d3;
+      font-size: 1.25rem;
+      .table-scroll {
+    height: 400px; /* Hauteur de la zone de défilement */
+    overflow-y: auto; /* Activer le défilement vertical si nécessaire */
+    color: #f8f8f8; font-family: 'Raleway',sans-serif; font-size: 18px; font-weight: 500; line-height: 32px; margin: 0 0 24px;
+}
+
+.table-wrapper {
+    overflow-x: auto; /* Activer le défilement horizontal si nécessaire */
+} 
+  
+</style>
+<div class="site-wrap">
+
+ <app-nav-bar></app-nav-bar>
+
+  <div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8 ml-auto">
+
+        
+          <h1 class="titre">FootExpress</h1>
+<p class="description">Bienvenue sur notre plateforme dédiée aux passionnés de football !
+   Plongez au cœur de l'action avec notre page d'accueil dynamique, 
+   conçue pour vous tenir informé des dernières nouvelles 
+  et des événements les plus palpitants du monde du football.</p>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="site-section bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="widget-next-match">
+
+            <div id="wg-api-football-games"
+                data-host="v3.football.api-sports.io"
+                data-key="e1c5db33da82c5fa1afe29e56cb54784"
+                data-date=""
+                data-league=""
+                data-season=""
+                data-theme="dark"
+                data-refresh="15"
+                data-show-toolbar="true"
+                data-show-errors="false"
+                data-show-logos="true"
+                data-modal-game="true"
+                data-modal-standings="true"
+                data-modal-show-logos="true">
+            </div>
+            <script
+                type="module"
+                src="https://widgets.api-sports.io/2.0.3/widgets.js">
+            </script>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+<app-footer></app-footer>

@@ -1,0 +1,406 @@
+<style>
+  .titre {
+    font-size: 100px;
+  text-shadow: -1px -1px #e40505, 1px 1px #e40505, -3px 0 4px #000;
+  font-family:Arial, Helvetica, sans-serif;
+  color: #ee1e46;
+  padding:16px;
+  font-weight:lighter;
+  
+  text-align:center;
+  display:block;
+  margin:16px;
+  }
+
+  .description {
+      /*color: #d3d3d3;
+      font-size: 1.25rem;
+      .table-scroll {
+    height: 400px; /* Hauteur de la zone de défilement */
+    overflow-y: auto; /* Activer le défilement vertical si nécessaire */
+    color: #f8f8f8; font-family: 'Raleway',sans-serif; font-size: 18px; font-weight: 500; line-height: 32px; margin: 0 0 24px;
+}
+
+.table-wrapper {
+    overflow-x: auto; /* Activer le défilement horizontal si nécessaire */
+} 
+  
+</style>
+
+<div class="site-wrap">
+  
+
+   <app-nav-bar></app-nav-bar>
+
+  <div class="hero overlay" style="background-image: url('assets/images/bg_3.jpg');">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8 ml-auto">
+
+        
+          <h1 class="titre">FootExpress</h1>
+<p class="description">Bienvenue sur notre plateforme dédiée aux passionnés de football !
+   Plongez au cœur de l'action avec notre page d'accueil dynamique, 
+   conçue pour vous tenir informé des dernières nouvelles 
+  et des événements les plus palpitants du monde du football.</p>
+      </div>
+    </div>
+
+    <!-- <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 ml-auto">
+          <h1 class="text-white">World Cup Event</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, molestias repudiandae pariatur.</p>
+          <div id="date-countdown"></div>
+          <p>
+            <a href="#" class="btn btn-primary py-3 px-4 mr-3">Book Ticket</a>
+            <a href="#" class="more light">Learn More</a>
+          </p>
+        </div>
+      </div>
+    </div> -->
+  </div>
+  </div>
+
+  <!-- <div class="container">
+    <div class="row">
+        <div class="col-md-12" *ngIf="playerStatistics">
+            <div class="row">
+                <div class="col-md-3" *ngFor="let player of playerStatistics.players">
+                    <div class="card p-3 m-3">
+                        <img [src]="player.player.photo" alt="Player Photo" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ player.player.name }}</h5>
+                            <div *ngFor="let stat of player.statistics">
+                                <p class="card-text">Minutes Played: {{ stat.games.minutes }}</p>
+                                <p class="card-text">Position: {{ stat.games.position }}</p>
+                                <p class="card-text">Rating: {{ stat.games.rating }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+  <!-- <div class="container">
+  <div class="row">
+    <ng-container *ngFor="let team of playerStatistics | keyvalue">
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img [src]="team.value.team.logo" class="card-img-top" alt="Team Logo">
+          <div class="card-body">
+            <h1 class="card-title text-dark text-center">{{ team.value.team.name }}</h1>
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action disabled">Players Statistics</a>
+              <ng-container *ngFor="let player of team.value.players">
+                <a href="#" class="list-group-item list-group-item-action">
+                  <img [src]="player.player.photo" class="player-photo" alt="Player Photo">
+                  {{ player.player.name }}
+                  <div>{{ player.statistics[0]?.games.minutes }} Minutes Played</div>
+                  <div>{{ player.statistics[0]?.games.position }} Position</div>
+                  <div>{{ player.statistics[0]?.games.rating }} Rating</div>
+                </a>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div> -->
+
+  <!-- <div class="container">
+  <div class="row justify-content-center">
+    <ng-container *ngFor="let team of playerStatistics | keyvalue">
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h1 class="card-title text-dark text-center team-name">
+              <img [src]="team.value.team.logo" class="card-img-top team-logo" alt="Team Logo">
+              {{ team.value.team.name }}
+            </h1>
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action disabled">Players Statistics</a>
+              <ng-container *ngFor="let player of team.value.players">
+                <a href="#" class="list-group-item list-group-item-action">
+                  <div class="player-info">
+                    <img [src]="player.player.photo" class="player-photo" alt="Player Photo">
+                    <div class="player-details">
+                      <span class="player-name">{{ player.player.name }}</span>
+                      <div class="player-stats">
+                        <div><strong>{{ player.statistics[0]?.games.minutes }}</strong> Minutes Played</div>
+                        <div><strong>{{ player.statistics[0]?.games.position }}</strong> Position</div>
+                        <div><strong>{{ player.statistics[0]?.games.rating }}</strong> Rating</div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div> -->
+
+
+
+
+  <div class="site-section bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="col-12 title-section">
+            <h2 class="heading">Listes des buteurs et des meilleurs passeurs : </h2>
+          </div> 
+         
+          <div class="widget-next-match">
+            <select class="wg_toolbar" [(ngModel)]="selectedLeague" (change)="onLeagueChange($event)">
+              <option *ngFor="let league of leagues" [value]="league.league.id">{{ league.league.name }}</option>
+            </select>
+            <select class="wg_toolbar" [(ngModel)]="selectedSeason" (change)="onSeasonChange($event)">
+              <option *ngFor="let season of seasons" [value]="season">{{ season }}</option>
+            </select>
+
+            <div *ngIf="topScorers" class="top-scorers-container bg-dark">
+              <div class="row">
+                <div *ngFor="let player of topScorers" class="col-md-4">
+                  <div class="card">
+                    <img [src]="player.player.photo" class="card-img-top" alt="{{ player.player.name }}">
+                    <div class="card-body">
+                      <h5 class="card-title" style="color: #0c0b0b !important;">{{ player.player.name }}</h5>
+                      <p class="card-text">Goals: {{ player.statistics[0].goals.total }}</p>
+                      <p class="card-text">Assists: {{ player.statistics[0].goals.assists }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="!topScorers">
+              <div   class="top-scorers-container bg-dark">
+                <div   class="row">
+                  <div   class="col-md-4">
+                    <div   class="card"><img   class="card-img-top"
+                        alt="J. Vardy" src="https://media.api-sports.io/football/players/18788.png">
+                      <div   class="card-body">
+                        <h5   class="card-title">J. Vardy</h5>
+                        <p   class="card-text">Goals: 23</p>
+                        <p   class="card-text">Assists: 5</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div   class="col-md-4">
+                    <div   class="card"><img   class="card-img-top"
+                        alt="D. Ings" src="https://media.api-sports.io/football/players/18955.png">
+                      <div   class="card-body">
+                        <h5   class="card-title">D. Ings</h5>
+                        <p   class="card-text">Goals: 22</p>
+                        <p   class="card-text">Assists: 2</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div   class="col-md-4">
+                    <div   class="card"><img   class="card-img-top"
+                        alt="P. Aubameyang" src="https://media.api-sports.io/football/players/1465.png">
+                      <div   class="card-body">
+                        <h5   class="card-title">P. Aubameyang</h5>
+                        <p   class="card-text">Goals: 22</p>
+                        <p   class="card-text">Assists: 3</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div   class="col-md-4">
+                    <div   class="card"><img   class="card-img-top"
+                        alt="R. Sterling" src="https://media.api-sports.io/football/players/645.png">
+                      <div   class="card-body">
+                        <h5   class="card-title">R. Sterling</h5>
+                        <p   class="card-text">Goals: 20</p>
+                        <p   class="card-text">Assists: 1</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div   class="col-md-4">
+                    <div   class="card"><img   class="card-img-top"
+                        alt="Mohamed Salah" src="https://media.api-sports.io/football/players/306.png">
+                      <div   class="card-body">
+                        <h5   class="card-title">Mohamed Salah</h5>
+                        <p   class="card-text">Goals: 19</p>
+                        <p   class="card-text">Assists: 10</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div   class="col-md-4">
+                    <div   class="card"><img   class="card-img-top"
+                        alt="S. Mané" src="https://media.api-sports.io/football/players/304.png">
+                      <div   class="card-body">
+                        <h5   class="card-title">S. Mané</h5>
+                        <p   class="card-text">Goals: 18</p>
+                        <p   class="card-text">Assists: 7</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div   class="col-md-4">
+                    <div   class="card"><img   class="card-img-top"
+                        alt="H. Kane" src="https://media.api-sports.io/football/players/184.png">
+                      <div   class="card-body">
+                        <h5   class="card-title">H. Kane</h5>
+                        <p   class="card-text">Goals: 18</p>
+                        <p   class="card-text">Assists: 2</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div   class="col-md-4">
+                    <div   class="card"><img   class="card-img-top"
+                        alt="A. Martial" src="https://media.api-sports.io/football/players/908.png">
+                      <div   class="card-body">
+                        <h5   class="card-title">A. Martial</h5>
+                        <p   class="card-text">Goals: 17</p>
+                        <p   class="card-text">Assists: 6</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div   class="col-md-4">
+                    <div   class="card"><img   class="card-img-top"
+                        alt="R. Jiménez" src="https://media.api-sports.io/football/players/2887.png">
+                      <div   class="card-body">
+                        <h5   class="card-title">R. Jiménez</h5>
+                        <p   class="card-text">Goals: 17</p>
+                        <p   class="card-text">Assists: 6</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div   class="col-md-4">
+                    <div   class="card"><img   class="card-img-top"
+                        alt="M. Rashford" src="https://media.api-sports.io/football/players/909.png">
+                      <div   class="card-body">
+                        <h5   class="card-title">M. Rashford</h5>
+                        <p   class="card-text">Goals: 17</p>
+                        <p   class="card-text">Assists: 7</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div   class="col-md-4">
+                    <div   class="card"><img   class="card-img-top"
+                        alt="S. Agüero" src="https://media.api-sports.io/football/players/642.png">
+                      <div   class="card-body">
+                        <h5   class="card-title">S. Agüero</h5>
+                        <p   class="card-text">Goals: 16</p>
+                        <p   class="card-text">Assists: 3</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div   class="col-md-4">
+                    <div   class="card"><img   class="card-img-top"
+                        alt="T. Abraham" src="https://media.api-sports.io/football/players/19194.png">
+                      <div   class="card-body">
+                        <h5   class="card-title">T. Abraham</h5>
+                        <p   class="card-text">Goals: 15</p>
+                        <p   class="card-text">Assists: 3</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div   class="col-md-4">
+                    <div   class="card"><img   class="card-img-top"
+                        alt="Gabriel Jesus" src="https://media.api-sports.io/football/players/643.png">
+                      <div   class="card-body">
+                        <h5   class="card-title">Gabriel Jesus</h5>
+                        <p   class="card-text">Goals: 14</p>
+                        <p   class="card-text">Assists: 7</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div   class="col-md-4">
+                    <div   class="card"><img   class="card-img-top"
+                        alt="C. Wood" src="https://media.api-sports.io/football/players/18931.png">
+                      <div   class="card-body">
+                        <h5   class="card-title">C. Wood</h5>
+                        <p   class="card-text">Goals: 14</p>
+                        <p   class="card-text">Assists: 1</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div   class="col-md-4">
+                    <div   class="card"><img   class="card-img-top"
+                        alt="Richarlison" src="https://media.api-sports.io/football/players/2413.png">
+                      <div   class="card-body">
+                        <h5   class="card-title">Richarlison</h5>
+                        <p   class="card-text">Goals: 13</p>
+                        <p   class="card-text">Assists: 3</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div   class="col-md-4">
+                    <div   class="card"><img   class="card-img-top"
+                        alt="D. Calvert-Lewin" src="https://media.api-sports.io/football/players/18766.png">
+                      <div   class="card-body">
+                        <h5   class="card-title">D. Calvert-Lewin</h5>
+                        <p   class="card-text">Goals: 13</p>
+                        <p   class="card-text">Assists: 1</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div   class="col-md-4">
+                    <div   class="card"><img   class="card-img-top"
+                        alt="K. De Bruyne" src="https://media.api-sports.io/football/players/629.png">
+                      <div   class="card-body">
+                        <h5   class="card-title">K. De Bruyne</h5>
+                        <p   class="card-text">Goals: 13</p>
+                        <p   class="card-text">Assists: 20</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div   class="col-md-4">
+                    <div   class="card"><img   class="card-img-top"
+                        alt="Son Heung-Min" src="https://media.api-sports.io/football/players/186.png">
+                      <div   class="card-body">
+                        <h5   class="card-title">Son Heung-Min</h5>
+                        <p   class="card-text">Goals: 11</p>
+                        <p   class="card-text">Assists: 10</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div   class="col-md-4">
+                    <div   class="card"><img   class="card-img-top"
+                        alt="R. Mahrez" src="https://media.api-sports.io/football/players/635.png">
+                      <div   class="card-body">
+                        <h5   class="card-title">R. Mahrez</h5>
+                        <p   class="card-text">Goals: 11</p>
+                        <p   class="card-text">Assists: 9</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div   class="col-md-4">
+                    <div   class="card"><img   class="card-img-top"
+                        alt="T. Pukki" src="https://media.api-sports.io/football/players/19085.png">
+                      <div   class="card-body">
+                        <h5   class="card-title">T. Pukki</h5>
+                        <p   class="card-text">Goals: 11</p>
+                        <p   class="card-text">Assists: 3</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}-->
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div> <!-- .site-section -->
+
+
+
+
+
+</div>
+
+<app-footer></app-footer>

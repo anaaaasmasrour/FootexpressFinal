@@ -1,0 +1,61 @@
+<h2>Match Calendar</h2>
+<!-- <div class="calendar-container">
+  <div *ngIf="fixtures" class="calendar">
+    <div *ngFor="let fixture of fixtures" class="calendar-event">
+      <div class="date-time">
+        <div class="date">{{ fixture.fixture.date | date: 'yyyy-MM-dd' }}</div>
+        <div class="time">{{ fixture.fixture.date | date: 'HH:mm' }}</div>
+      </div>
+      <div class="info">
+        <div class="league">{{ fixture.league.name }}</div>
+        <div class="teams">
+          <div class="home-team">{{ fixture.teams.home.name }}</div>
+          <div class="away-team">{{ fixture.teams.away.name }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!fixtures" class="no-fixtures">
+    <p>No fixtures available.</p>
+  </div>
+</div> -->
+
+<div class="calendar-container">
+  <div *ngIf="fixtures" class="calendar">
+    <div class="header">
+      <button id="prevBtn">&lt;</button>
+      <h1 id="monthYear"></h1>
+      <button id="nextBtn">&gt;</button>
+    </div>
+    <div class="days">
+      <div class="day">Sun</div>
+      <div class="day">Mon</div>
+      <div class="day">Tue</div>
+      <div class="day">Wed</div>
+      <div class="day">Thu</div>
+      <div class="day">Fri</div>
+      <div class="day">Sat</div>
+    </div>
+    <div class="dates" id="dates">
+      <div *ngFor="let fixture of fixtures" class="date">
+        <div class="date-info">
+          <div class="date">{{ fixture.date }}</div>
+          <div class="info">
+            <div class="league">{{ fixture.league.name }}</div>
+            <div class="teams">
+              <div class="home-team">{{ fixture.teams.home.name }}</div>
+              <div class="away-team">{{ fixture.teams.away.name }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!fixtures" class="no-fixtures">
+    <p>No fixtures available.</p>
+  </div>
+</div>
+
+
+
+
